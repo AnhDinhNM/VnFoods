@@ -1,4 +1,4 @@
-import { FlatList, Pressable, StyleSheet, View, Text, RefreshControl, ActivityIndicator, Image } from 'react-native';
+import { FlatList, Pressable, StyleSheet, View, Text, RefreshControl, ActivityIndicator, Image, Dimensions } from 'react-native';
 import SvgSave from '../assets/svg/SvgSave';
 import SvgShare from '../assets/svg/SvgShare';
 import DiscoverImages from '../assets/imagesFuntions/DiscoverImage';
@@ -96,7 +96,7 @@ const FoodItem = ({ item, navigation }) => {
                             }
                         )
                     }}>
-                        <FoodImages imageUri={image} width={330} height={200} />
+                        <FoodImages imageUri={image} width={Dimensions.get('window').width * 0.85} height={200} />
                     </Pressable>
                 </View>
                 <View style={styles.foodInfo}>
@@ -149,25 +149,25 @@ function UserScreen(props) {
         { id: '20', name: 'Pachi Pachi', description: 'Sự hòa quyện của lịch sử và văn hóa qua mỗi bữa ăn tại các nhà hàng này.', like: '', save: '', likeData: "126", unLikeData: "16", saveData: true, imageUri: 'https://cdn.justfly.vn/1920x1440/media/1f/a6/c701-6477-4b95-877c-f0002f209b72.jpg', image1: 'https://bepvietdecor.vn/upload/media/-1691833692-77946c.webp', image2: 'https://cdn.justfly.vn/1920x1440/media/61/4f/4bf2-929a-43e6-a0e3-04d1c67264a7.jpg', introduce: 'Pachi Pachi là nhà hàng mang phong cách Nhật Bản với không gian nhẹ nhàng và ấm cúng. Chính bởi vậy, ấn tượng đầu tiên khi đến với nhà hàng này là sự gọn gàng, ngăn nắp và thiết kế vô cùng thông minh.|Bạn có thể lựa chọn ngồi bàn - ghế hoặc ngồi thảm với bàn thấp y như người Nhật. Nhà hàng có sẵn các loại bàn dành cho nhóm từ 2 đến 6 người. Ngoài ra các loại phòng riêng cũng sẵn sàng cho nhóm khách từ 8 người trở lên với bàn âm sàn.', review: 'Nhà hàng Pachi Pachi nổi tiếng với các món ăn thịt nướng Nhật Bản, lẩu Nhật Bản chuẩn vị.|Với các nguyên liệu chất lượng, tươi ngon và đảm bảo cho sức khỏe, Pachi Pachi là địa điểm tụ tập quen thuộc của người Sài Gòn.' },
     ];
     const listFoods = [
-        { id: 1, prId: 1, name: 'Phở', rate: 5, likedHealth: true, numberLike: 999, level: 4, imageUri: '', },
-        { id: 2, prId: 1, name: 'Bánh Mì', rate: 5, likedHealth: true, numberLike: 800, level: 1, imageUri: '', },
-        { id: 3, prId: 1, name: 'Bún Riêu Cua', rate: 4, likedHealth: false, numberLike: 100, level: 3, imageUri: '', },
-        { id: 4, prId: 4, name: 'Gỏi Cuốn', rate: 4.5, likedHealth: false, numberLike: 250, level: 2, imageUri: '', },
-        { id: 5, prId: 2, name: 'Cơm Gà Hải Nam', rate: 3, likedHealth: false, numberLike: 400, level: 3, imageUri: '', },
-        { id: 6, prId: 1, name: 'Bún Chả Hà Nội', rate: 5, likedHealth: true, numberLike: 632, level: 3, imageUri: '', },
-        { id: 7, prId: 8, name: 'Bánh Cuốn', rate: 4, likedHealth: true, numberLike: 900, level: 4, imageUri: '', },
-        { id: 8, prId: 2, name: 'Bánh Xèo', rate: 3, likedHealth: false, numberLike: 700, level: 2, imageUri: '', },
-        { id: 9, prId: 10, name: 'Bún Bò Huế', rate: 4, likedHealth: false, numberLike: 789, level: 3, imageUri: '', },
-        { id: 10, prId: 11, name: 'Hủ tiếu Nam Vang', rate: 3.5, likedHealth: false, numberLike: 489, level: 3, imageUri: '', },
-        { id: 11, prId: 10, name: 'Bánh Canh Cua', rate: 3, likedHealth: false, numberLike: 142, level: 3, imageUri: '', },
-        { id: 12, prId: 1, name: 'Bún Thịt Nướng', rate: 3.4, likedHealth: true, numberLike: 456, level: 3, imageUri: '', },
-        { id: 13, prId: 2, name: 'Cơm Tấm', rate: 2.7, likedHealth: false, numberLike: 125, level: 2, imageUri: '', },
-        { id: 14, prId: 1, name: 'Bún Bò Nam Bộ', rate: 4.3, likedHealth: false, numberLike: 951, level: 3, imageUri: '', },
-        { id: 15, prId: 12, name: 'Bánh Mì Kẹp Thịt', rate: 4.6, likedHealth: true, numberLike: 648, level: 1, imageUri: '', },
-        { id: 16, prId: 14, name: 'Bánh Mì Hòa Mã', rate: 4.1, likedHealth: false, numberLike: 124, level: 1, imageUri: '', },
-        { id: 17, prId: 2, name: 'Bánh Mì Chảo', rate: 4.4, likedHealth: false, numberLike: 466, level: 2, imageUri: '', },
-        { id: 18, prId: 1, name: 'Chả Cá Lã Vọng', rate: 2, likedHealth: false, numberLike: 752, level: 2, imageUri: '', },
-        { id: 20, prId: 2, name: 'Bún Mắm', rate: 1.1, likedHealth: false, numberLike: 369, level: 1, imageUri: '', },
+        { id: 1, prId: 1, name: 'Phở', rate: 5, likedHealth: true, numberLike: 999, level: 4, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/pho-bo.jpg?raw=true', },
+        { id: 2, prId: 1, name: 'Bánh Mì', rate: 5, likedHealth: true, numberLike: 800, level: 1, imageUri: 'https://baoangiang.com.vn/image/fckeditor/upload/2023/20230516/images/clever-junior-694.jpg', },
+        { id: 3, prId: 1, name: 'Bánh Đa Cua', rate: 4, likedHealth: false, numberLike: 100, level: 3, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/banh-da-cua.jpg?raw=true', },
+        { id: 4, prId: 8, name: 'Nem Nầm', rate: 4.5, likedHealth: false, numberLike: 250, level: 2, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/nem-nam.jpg?raw=true', },
+        { id: 5, prId: 2, name: 'Cơm Gà Hải Nam', rate: 3, likedHealth: false, numberLike: 400, level: 3, imageUri: 'https://cdn.tgdd.vn/Files/2019/03/29/1157476/cach-nau-com-ga-hoi-an-chinh-goc-chuan-vi-nhat-202208271507268751.jpg', },
+        { id: 6, prId: 1, name: 'Bún Chả Hà Nội', rate: 5, likedHealth: true, numberLike: 632, level: 3, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/bun-cha.jpg?raw=true', },
+        { id: 7, prId: 8, name: 'Cơm Lam', rate: 4, likedHealth: true, numberLike: 900, level: 4, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/com-lam.jpg?raw=true', },
+        { id: 8, prId: 2, name: 'Cốm', rate: 3, likedHealth: false, numberLike: 700, level: 2, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/com.jpg?raw=true', },
+        { id: 9, prId: 10, name: 'Bún Bò Huế', rate: 4, likedHealth: false, numberLike: 789, level: 3, imageUri: 'https://bizweb.dktcdn.net/100/442/328/files/bun-bo-hue-dac-san-dan-da-lam-say-long-biet-bao-thuc-khach-4.jpg?v=1638937219225', },
+        { id: 10, prId: 11, name: 'Dê Tái Chanh', rate: 3.5, likedHealth: false, numberLike: 489, level: 3, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/de-tai-chanh.jpg?raw=true', },
+        { id: 11, prId: 10, name: 'Gà Mạnh Hoạch', rate: 3, likedHealth: false, numberLike: 142, level: 3, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/ga-manh-hoach.jpg?raw=true', },
+        { id: 12, prId: 1, name: 'Mỳ Xào Thập Cẩm', rate: 3.4, likedHealth: true, numberLike: 456, level: 3, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/mi-chu-xao-thap-cam.jpg?raw=true', },
+        { id: 13, prId: 2, name: 'Miến Lươn Xào', rate: 2.7, likedHealth: false, numberLike: 125, level: 2, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/mien-luon-xao.jpg?raw=true', },
+        { id: 14, prId: 1, name: 'Nem Rán', rate: 4.3, likedHealth: false, numberLike: 951, level: 3, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/nem-ran.jpg?raw=true', },
+        { id: 15, prId: 11, name: 'Bún Đậu Mắm Tôm', rate: 4.6, likedHealth: true, numberLike: 648, level: 1, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/bun-dau-mam-tom.jpg?raw=true', },
+        { id: 16, prId: 8, name: 'Thịt Trâu Gác Bếp', rate: 4.1, likedHealth: false, numberLike: 124, level: 1, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/trau-gac-bep.jpg?raw=true', },
+        { id: 17, prId: 2, name: 'Xôi Ngũ Sắc', rate: 4.4, likedHealth: false, numberLike: 466, level: 2, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/xoi-ngu-sac.jpg?raw=true', },
+        { id: 18, prId: 1, name: 'Chả Cá Lã Vọng', rate: 2, likedHealth: false, numberLike: 752, level: 2, imageUri: 'https://github.com/QuachHung1102/AmThucMienBac_MinhAnh/blob/cba34bc24e8ced4da62bd2132ec96152a1ab6184/assets/images/foodImage/cha-ca-la-vong.jpg?raw=true', },
+        { id: 20, prId: 2, name: 'Bún Mắm', rate: 1.1, likedHealth: false, numberLike: 369, level: 1, imageUri: 'https://pastaxi-manager.onepas.vn/content/uploads/articles/nguyendoan/anh-blog/bun-mam/cach-nau-bun-mam-1.jpg', },
     ];
     const [data, setData] = useState([]);
     const [data2, setData2] = useState([]);
